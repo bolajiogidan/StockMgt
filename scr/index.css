@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Space Grotesk", "Manrope", sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+
+  --color-on-primary: #ffffff;
+  --color-surface-variant: #e4e2e2;
+  --color-on-secondary-fixed-variant: #005232;
+  --color-primary-container: #002f6c;
+  --color-on-primary-fixed-variant: #224583;
+  --color-background: #fbf9f8;
+  --color-primary-fixed-dim: #aec6ff;
+  --color-secondary-container: #75f8b3;
+  --color-surface-dim: #dbd9d9;
+  --color-tertiary-container: #412e00;
+  --color-on-secondary-fixed: #002111;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+  --color-secondary: #006d43;
+  --color-surface-bright: #fbf9f8;
+  --color-tertiary: #271a00;
+  --color-tertiary-fixed-dim: #fbbc00;
+  --color-surface-container: #efeded;
+  --color-primary: #001b44;
+  --color-on-tertiary-container: #c39100;
+  --color-surface-container-high: #eae8e7;
+  --color-on-tertiary-fixed: #261a00;
+  --color-surface: #fbf9f8;
+  --color-inverse-on-surface: #f2f0f0;
+  --color-secondary-fixed: #78fbb6;
+  --color-on-secondary: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-error: #ba1a1a;
+  --color-on-tertiary-fixed-variant: #5c4300;
+  --color-on-secondary-container: #007147;
+  --color-outline-variant: #c4c6d2;
+  --color-inverse-primary: #aec6ff;
+  --color-outline: #747781;
+  --color-surface-container-highest: #e4e2e2;
+  --color-surface-container-low: #f5f3f3;
+  --color-on-error: #ffffff;
+  --color-primary-fixed: #d8e2ff;
+  --color-secondary-fixed-dim: #59de9b;
+  --color-on-background: #1b1c1c;
+  --color-on-surface-variant: #434750;
+  --color-inverse-surface: #303030;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-fixed: #ffdfa0;
+  --color-on-primary-container: #7999dc;
+  --color-surface-tint: #3c5d9c;
+  --color-on-surface: #1b1c1c;
+  --color-on-primary-fixed: #001a42;
+
+  --radius-DEFAULT: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.5rem;
+  --radius-full: 0.75rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+body {
+  font-family: var(--font-body);
+  @apply bg-background text-on-background;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-headline);
+}
+
+.custom-scrollbar::-webkit-scrollbar { width: 4px; }
+.custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+.custom-scrollbar::-webkit-scrollbar-thumb { background: #c4c6d2; border-radius: 10px; }
+
