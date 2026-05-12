@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "Asset": {
+      "title": "Asset",
+      "description": "Lab equipment or consumable item",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "serialNumber": { "type": "string" },
+        "status": { "type": "string", "enum": ["Available", "In-Use", "Broken", "Low-Stock"] },
+        "quantity": { "type": "integer" },
+        "threshold": { "type": "integer" },
+        "location": { "type": "string" },
+        "description": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "integer" },
+        "updatedAt": { "type": "integer" }
+      },
+      "required": ["name", "category", "status", "quantity", "location", "createdAt", "updatedAt"]
+    },
+    "Transaction": {
+      "title": "Transaction",
+      "description": "Record of equipment check-out or check-in",
+      "type": "object",
+      "properties": {
+        "assetId": { "type": "string" },
+        "assetName": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "checkoutDate": { "type": "integer" },
+        "returnDate": { "type": "integer" },
+        "expectedReturnDate": { "type": "integer" },
+        "status": { "type": "string", "enum": ["active", "completed"] }
+      },
+      "required": ["assetId", "assetName", "userId", "userName", "checkoutDate", "expectedReturnDate", "status"]
+    },
+    "User": {
+      "title": "User",
+      "description": "Application user (Admin, Technician, Student)",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "technician", "student"] },
+        "department": { "type": "string" }
+      },
+      "required": ["name", "email", "role"]
+    }
+  },
+  "firestore": {
+    "/assets/{assetId}": {
+      "schema": "Asset",
+      "description": "Collection of all inventory items"
+    },
+    "/transactions/{transactionId}": {
+      "schema": "Transaction",
+      "description": "Log of all equipment movements"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles and roles"
+    }
+  }
+}

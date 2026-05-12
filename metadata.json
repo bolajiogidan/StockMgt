@@ -1,0 +1,8 @@
+{
+  "name": "Remix: LabTrack Pro",
+  "description": "University Lab Inventory & Equipment Management System with QR tracking, check-in/out workflows, low-stock alerts, and a modern product landing page.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": []
+}
